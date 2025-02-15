@@ -19,9 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@+30r*1g)ok$-vul&mdw#fs-v8ze4#dw#ka0q#%rilc^i)l0c+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS=['https://*.onrender.com','http://127.0.0.1:8000']
+
+DEBUG = True
 
 
 # Application definition
@@ -35,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'event',
     'user',
-<<<<<<< HEAD
     'debug_toolbar',
-=======
-    
->>>>>>> 22242e27a8e4cd2b4e8eb7613a4dea521f7a50a1
 ]
 
 MIDDLEWARE = [
@@ -88,10 +87,7 @@ WSGI_APPLICATION = 'event_managment.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-<<<<<<< HEAD
-=======
 
->>>>>>> 22242e27a8e4cd2b4e8eb7613a4dea521f7a50a1
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -146,3 +142,5 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
