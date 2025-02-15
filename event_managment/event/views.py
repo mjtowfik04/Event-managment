@@ -20,8 +20,8 @@ def event_form(request):
         if event_form.is_valid() and participant_form.is_valid():
             event = event_form.save()
             participant = participant_form.save(commit=False)
-            participant.save()  # প্রথমে participant সেভ করুন
-            participant.events.add(event)  # তারপর ManyToManyField আপডেট করুন
+            participant.save()  
+            participant.events.add(event)  
             messages.success(request, "Event added successfully!")
         else:
             messages.error(request, "Please fix the errors below.")
